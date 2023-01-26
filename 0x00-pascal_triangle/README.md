@@ -32,7 +32,7 @@ if __name__ == "__main__":
 [1,3,3,1]
 [1,4,6,4,1]
 ```
-#### Expmple output when n = 9
+#### Example output when n = 9
 ```
 [1]
 [1,1]
