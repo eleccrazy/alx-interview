@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 file: 0-minoperations.py
 Desc: This python module contains code for alx-interview preparation
