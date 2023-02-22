@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 File: 0-validate_utf8.py
 Desc: This python module contains interview preparation question
