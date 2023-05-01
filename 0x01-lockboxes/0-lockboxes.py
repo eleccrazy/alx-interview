@@ -10,24 +10,19 @@ Date Created: Jan 31, 2023
 
 def canUnlockAll(boxes):
     """A function that checks if all the boxes can be opened"""
-    canUnlockAll = False
-    keys = {0: True}
-    n_boxes = len(boxes)
-    while(True):
+    keys = []
+    length = len(boxes)
+    idx = 0
 
-        n_keys = len(keys)
-
-        for i in range(len(boxes)):
-            if boxes[i] and keys.get(i, False):
-                for j in boxes[i]:
-                    if j < n_boxes:
-                        keys[j] = True
-                    boxes[i] = None
-
-        if not(len(keys) > n_keys):
-            break
-
-    if n_keys == len(boxes):
-        canUnlockAll = True
-
-    return canUnlockAll
+    for i in boxes:
+        for j in i:
+            if j not in keys and j != 0 and j != idx:
+                keys.append(j)
+        idx += 1
+    keys = sorted(keys)
+    if len(keys) != length - 1:
+        return False
+    for k in range(1, length):
+        if k != keys[k - 1]:
+            return False
+    return True
