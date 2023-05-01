@@ -20,8 +20,6 @@ def canUnlockAll(boxes):
                 keys.append(j)
         idx += 1
     keys = sorted(keys)
-    if len(keys) != length - 1:
-        return False
     for k in range(1, length):
         if k != keys[k - 1]:
             return False
