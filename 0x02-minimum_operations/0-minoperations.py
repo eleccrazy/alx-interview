@@ -15,7 +15,7 @@ def minOperations(n: int) -> int:
     ch = 'H'
     ops = 0
     status = False
-    while True:
+    while len(ch) < n:
         if n % len(ch) == 0 and not status:
             copy = ch
             ops += 1
