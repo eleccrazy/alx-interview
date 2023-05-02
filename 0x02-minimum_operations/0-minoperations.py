@@ -10,7 +10,7 @@ Date Created: Feb 9, 2023
 
 def minOperations(n: int) -> int:
     """A method to compute the min operations needed to result H characters"""
-    if type(n) != int or n < 1:
+    if type(n) != int or n < 2:
         return 0
     ch = 'H'
     ops = 0
