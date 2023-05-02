@@ -12,19 +12,16 @@ def minOperations(n: int) -> int:
     """A method to compute the min operations needed to result H characters"""
     if type(n) != int or n < 2:
         return 0
-    ch = 1
+    repr = 1
     ops = 0
     status = False
-    while ch < n:
-        if n % ch == 0 and not status:
-            copy = ch
+    while repr < n:
+        if n % repr == 0 and not status:
+            copy = repr
             ops += 1
             status = True
         else:
-            ch += copy
+            repr += copy
             ops += 1
             status = False
-        if ch == n:
-            break
-
     return ops
