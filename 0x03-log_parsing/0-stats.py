@@ -14,7 +14,7 @@ def status_printer(total_size, status):
     print('File size: {}'.format(total_size))
     for code, count in sorted(status.items()):
         if count > 0:
-            print('{}: {:d}'.format(code, count))
+            print('{}: {}'.format(code, count))
 
 
 def main():
@@ -22,8 +22,8 @@ def main():
     status_codes = {'200': 0, '301': 0, '400': 0,
                     '401': 0, '403': 0, '404': 0, '405': 0, '500': 0}
     total = 0
+    count = 1
     try:
-        count = 1
         for line in stdin:
             splited = line.split()
             code = splited[-2]
@@ -33,7 +33,7 @@ def main():
                 total += int(splited[-1])
             except Exception:
                 pass
-            if count % 10 == 0:
+            if count % 10 == 0 or count == 1:
                 status_printer(total_size=total, status=status_codes)
             count += 1
     except KeyboardInterrupt:
