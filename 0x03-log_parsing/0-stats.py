@@ -26,14 +26,14 @@ def main():
     try:
         for line in stdin:
             splited = line.split()
+            if count % 10 == 0 and count != 0:
+                status_printer(total_size=total, status=status_codes)
             try:
                 code = splited[-2]
                 if code in status_codes.keys():
                     status_codes[code] = status_codes[code] + 1
             except Exception:
                 pass
-            if count % 10 == 0 and count != 0:
-                status_printer(total_size=total, status=status_codes)
             try:
                 total += int(splited[-1])
             except Exception:
