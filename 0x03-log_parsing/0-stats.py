@@ -26,7 +26,10 @@ def main():
     try:
         for line in stdin:
             splited = line.split()
-            code = splited[-2]
+            try:
+                code = splited[-2]
+            except Exception:
+                pass
             if count % 10 == 0 and count != 0:
                 status_printer(total_size=total, status=status_codes)
             if code in status_codes.keys():
