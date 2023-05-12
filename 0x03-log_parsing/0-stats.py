@@ -35,9 +35,6 @@ def main():
                 pass
             if count % 10 == 0:
                 status_printer(total_size=total, status=status_codes)
-                for code in status_codes.keys():
-                    status_codes[code] = 0
-                total = 0
             count += 1
     except KeyboardInterrupt:
         status_printer(total, status_codes)
