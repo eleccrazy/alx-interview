@@ -14,7 +14,7 @@ def status_printer(total_size, status):
     print('File size: {}'.format(total_size))
     for code, count in sorted(status.items()):
         if count > 0:
-            print('{}: {}'.format(code, count))
+            print('{}: {:d}'.format(code, count))
 
 
 def main():
