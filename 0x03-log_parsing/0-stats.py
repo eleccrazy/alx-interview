@@ -39,7 +39,6 @@ def main():
             except Exception:
                 pass
             count += 1
-        status_printer(total_size=total, status=status_codes)
     except KeyboardInterrupt:
         status_printer(total, status_codes)
         raise
