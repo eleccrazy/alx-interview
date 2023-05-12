@@ -22,20 +22,21 @@ def main():
     status_codes = {'200': 0, '301': 0, '400': 0,
                     '401': 0, '403': 0, '404': 0, '405': 0, '500': 0}
     total = 0
-    count = 1
+    count = 0
     try:
         for line in stdin:
             splited = line.split()
             code = splited[-2]
+            if count % 10 == 0 and count != 0:
+                status_printer(total_size=total, status=status_codes)
             if code in status_codes.keys():
                 status_codes[code] = status_codes[code] + 1
             try:
                 total += int(splited[-1])
             except Exception:
                 pass
-            if count % 10 == 0 or count == 1:
-                status_printer(total_size=total, status=status_codes)
             count += 1
+        status_printer(total_size=total, status=status_codes)
     except KeyboardInterrupt:
         status_printer(total, status_codes)
         raise
